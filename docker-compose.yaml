@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  selenium-standalone-firefox:
+    image: selenium/standalone-firefox:106.0
+    container_name: firefox
+    ports:
+      - "4444:4444"
+      - "7900:7900"
+    shm_size: 2gb
+    networks:
+      - default
+
+networks:
+  default:
+    driver: bridge
